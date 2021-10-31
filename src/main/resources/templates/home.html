@@ -36,16 +36,21 @@
 </body>
 
 <script type="text/javascript">
+    var dices = ['p', 'n', 'b', 'r', 'q', 'k'];
+
     function rollDices() {
         const dice = [...document.querySelectorAll(".die")];
         dice.forEach((die) => {
-            const resultDice = getRandomNumber(1, 6);
+            const resultDice = getRandomNumber(0, 5);
             die.classList.toggle("roll");
-            die.setAttribute('result_dice', '' + resultDice)
+            die.setAttribute('result_dice', dices[resultDice])
             const direction = getRandomNumber(1, 3);
             die.setAttribute('direction', '' + direction)
-
             console.log('result dice: ', die);
+
+            setTimeout(() => {
+                die.classList.toggle("roll");
+            }, 750);
         });
     }
 

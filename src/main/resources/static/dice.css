@@ -68,34 +68,34 @@ body {
     transition: transform 0.75s ease;
 }
 
-.roll[result_dice="1"][direction="1"] {
+.roll[result_dice="p"][direction="1"] {
     transform: rotateX(360deg) rotateY(0) rotateZ(0);
 }
-.roll[result_dice="1"][direction="2"] {
+.roll[result_dice="p"][direction="2"] {
     transform: rotateX(0) rotateY(360deg) rotateZ(0);
 }
-.roll[result_dice="1"][direction="3"] {
+.roll[result_dice="p"][direction="3"] {
     transform: rotateX(0) rotateY(-360deg) rotateZ(0);
 }
-.roll[result_dice="2"][direction="1"] {
+.roll[result_dice="n"][direction="1"] {
     transform: rotateX(90deg) rotateY(0) rotateZ(0);
 }
-.roll[result_dice="2"][direction="2"] {
+.roll[result_dice="n"][direction="2"] {
     transform: rotateX(-270deg) rotateY(0) rotateZ(0);
 }
-.roll[result_dice="2"][direction="3"] {
+.roll[result_dice="n"][direction="3"] {
     transform: rotateX(180deg) rotateY(180deg) rotateX(-90deg) rotateZ(180deg);
 }
-.roll[result_dice="3"] {
+.roll[result_dice="b"] {
     transform: rotateX(0) rotateY(-90deg) rotateZ(0);
 }
-.roll[result_dice="4"] {
+.roll[result_dice="r"] {
     transform: rotateX(0) rotateY(90deg) rotateZ(0);
 }
-.roll[result_dice="5"] {
+.roll[result_dice="q"] {
     transform: rotateX(0) rotateY(180deg) rotateZ(180deg);
 }
-.roll[result_dice="6"] {
+.roll[result_dice="k"] {
     transform: rotateX(0) rotateY(270deg) rotateZ(0);
 }
 
