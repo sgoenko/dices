@@ -142,7 +142,7 @@ body {
     transform: rotateX(-270deg) rotateY(0) rotateZ(0);
 }
 .roll[result_dice="2"][direction="3"] {
-    transform: rotateX(180deg) rotateY(180deg) rotateX(-90deg);
+    transform: rotateX(180deg) rotateY(180deg) rotateX(-90deg) rotateZ(180deg);
 }
 .roll[result_dice="3"] {
     transform: rotateX(0) rotateY(-90deg) rotateZ(0);
@@ -151,7 +151,7 @@ body {
     transform: rotateX(0) rotateY(90deg) rotateZ(0);
 }
 .roll[result_dice="5"] {
-    transform: rotateX(0) rotateY(180deg) rotateZ(0);
+    transform: rotateX(0) rotateY(180deg) rotateZ(180deg);
 }
 .roll[result_dice="6"] {
     transform: rotateX(0) rotateY(270deg) rotateZ(0);
