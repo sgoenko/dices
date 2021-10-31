@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.w3.org/1999/xhtml">
+<head><title>Home Page</title></head>
+
+<link rel="stylesheet" href="/dice.css"/>
+
+<body>
+<div class="dice">
+    <ol class="die" data-roll="1" id="die-1">
+        <li class="B-p-item" data-side="1"></li>
+        <li class="B-n-item" data-side="2"></li>
+        <li class="B-b-item" data-side="3"></li>
+        <li class="B-r-item" data-side="4"></li>
+        <li class="B-q-item" data-side="5"></li>
+        <li class="B-k-item" data-side="6"></li>
+    </ol>
+</div>
+<button type="button" id="roll-button">Roll Dice</button>
+
+</body>
+
+<script type="text/javascript">
+    function rollDice() {
+        const dice = [...document.querySelectorAll(".die")];
+        dice.forEach((die) => {
+            const randomRoll = getRandomNumber(1, 6);
+            toggleClasses(die, randomRoll);
+            die.dataset.roll = randomRoll;
+        });
+    }
+
+    function toggleClasses(die, roll) {
+        const randomRollClass = "roll-" + roll;
+        console.log(randomRollClass);
+        die.classList.toggle("roll");
+        die.classList.toggle(randomRollClass);
+    }
+
+    function getRandomNumber(min, max) {
+        min = Math.ceil(min);
+        max = Math.floor(max);
+        return Math.floor(Math.random() * (max - min + 1)) + min;
+    }
+
+    document.getElementById("roll-button").addEventListener("click", rollDice);
+
+</script>
+
+
+</html>
