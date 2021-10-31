@@ -5,31 +5,31 @@
 <link rel="stylesheet" href="/dice.css"/>
 
 <body>
-<div class="dice">
-    <ol class="die" result_dice="1" id="die-1">
-        <li class="B-p-item" data-side="1"></li>
-        <li class="B-n-item" data-side="2"></li>
-        <li class="B-b-item" data-side="3"></li>
-        <li class="B-r-item" data-side="4"></li>
-        <li class="B-q-item" data-side="5"></li>
-        <li class="B-k-item" data-side="6"></li>
-    </ol>
-    <ol class="die" result_dice="2" id="die-2">
-        <li class="B-p-item" data-side="1"></li>
-        <li class="B-n-item" data-side="2"></li>
-        <li class="B-b-item" data-side="3"></li>
-        <li class="B-r-item" data-side="4"></li>
-        <li class="B-q-item" data-side="5"></li>
-        <li class="B-k-item" data-side="6"></li>
-    </ol>
-    <ol class="die" result_dice="4" id="die-3">
-        <li class="B-p-item" data-side="1"></li>
-        <li class="B-n-item" data-side="2"></li>
-        <li class="B-b-item" data-side="3"></li>
-        <li class="B-r-item" data-side="4"></li>
-        <li class="B-q-item" data-side="5"></li>
-        <li class="B-k-item" data-side="6"></li>
-    </ol>
+<div class="dice-list">
+    <figure class="die" id="die-1">
+        <li class="B-p-item" dice-side="1"></li>
+        <li class="B-n-item" dice-side="2"></li>
+        <li class="B-b-item" dice-side="3"></li>
+        <li class="B-r-item" dice-side="4"></li>
+        <li class="B-q-item" dice-side="5"></li>
+        <li class="B-k-item" dice-side="6"></li>
+    </figure>
+    <figure class="die" id="die-2">
+        <li class="B-p-item" dice-side="1"></li>
+        <li class="B-n-item" dice-side="2"></li>
+        <li class="B-b-item" dice-side="3"></li>
+        <li class="B-r-item" dice-side="4"></li>
+        <li class="B-q-item" dice-side="5"></li>
+        <li class="B-k-item" dice-side="6"></li>
+    </figure>
+    <figure class="die" id="die-3">
+        <li class="B-p-item" dice-side="1"></li>
+        <li class="B-n-item" dice-side="2"></li>
+        <li class="B-b-item" dice-side="3"></li>
+        <li class="B-r-item" dice-side="4"></li>
+        <li class="B-q-item" dice-side="5"></li>
+        <li class="B-k-item" dice-side="6"></li>
+    </figure>
 </div>
 <button type="button" id="roll-button">Roll Dice</button>
 
@@ -40,14 +40,13 @@
         const dice = [...document.querySelectorAll(".die")];
         dice.forEach((die) => {
             const resultDice = getRandomNumber(1, 6);
-            toggleClasses(die, resultDice);
-        });
-    }
+            die.classList.toggle("roll");
+            die.setAttribute('result_dice', '' + 2)
+            const direction = getRandomNumber(1, 3);
+            die.setAttribute('direction', '' + direction)
 
-    function toggleClasses(die, roll) {
-        die.classList.toggle("roll");
-        die.setAttribute('result_dice', '' + roll)
-        console.log('result dice: ', die);
+            console.log('result dice: ', die);
+        });
     }
 
     function getRandomNumber(min, max) {
