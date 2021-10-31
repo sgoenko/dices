@@ -33,21 +33,7 @@ body {
     transform-style: preserve-3d;
     width: 6rem;
 }
-.die-item {
-    background-image: url("dices/B_p.png");
-    background-position: center;
-    background-size: 500%;
-    box-shadow: inset -0.35rem 0.35rem 0.75rem rgba(0, 0, 0, 0.3),
-    inset 0.5rem -0.25rem 0.5rem rgba(0, 0, 0, 0.15);
-    grid-column: 1;
-    grid-row: 1;
-    height: 100%;
-    width: 100%;
-    padding: 1rem;
-}
-
-.B-p-item {
-    background-image: url("dices/B_p.png");
+.dice {
     background-position: center;
     background-size: auto;
     box-shadow: inset -0.35rem 0.35rem 0.75rem rgba(0, 0, 0, 0.3),
@@ -59,67 +45,23 @@ body {
     padding: 1rem;
 }
 
-.B-n-item {
+.dice[dice_type="p"][dice_color="black"] {
+    background-image: url("dices/B_p.png");
+}
+.dice[dice_type="n"][dice_color="black"] {
     background-image: url("dices/B_n.png");
-    background-position: center;
-    background-size: auto;
-    box-shadow: inset -0.35rem 0.35rem 0.75rem rgba(0, 0, 0, 0.3),
-    inset 0.5rem -0.25rem 0.5rem rgba(0, 0, 0, 0.15);
-    grid-column: 1;
-    grid-row: 1;
-    height: 100px;
-    width: 100px;
-    padding: 1rem;
 }
-
-.B-b-item {
+.dice[dice_type="b"][dice_color="black"] {
     background-image: url("dices/B_b.png");
-    background-position: center;
-    background-size: auto;
-    box-shadow: inset -0.35rem 0.35rem 0.75rem rgba(0, 0, 0, 0.3),
-    inset 0.5rem -0.25rem 0.5rem rgba(0, 0, 0, 0.15);
-    grid-column: 1;
-    grid-row: 1;
-    height: 100px;
-    width: 100px;
-    padding: 1rem;
 }
-
-.B-r-item {
+.dice[dice_type="r"][dice_color="black"] {
     background-image: url("dices/B_r.png");
-    background-position: center;
-    background-size: auto;
-    box-shadow: inset -0.35rem 0.35rem 0.75rem rgba(0, 0, 0, 0.3),
-    inset 0.5rem -0.25rem 0.5rem rgba(0, 0, 0, 0.15);
-    grid-column: 1;
-    grid-row: 1;
-    height: 100px;
-    width: 100px;
-    padding: 1rem;
 }
-.B-q-item {
+.dice[dice_type="q"][dice_color="black"] {
     background-image: url("dices/B_q.png");
-    background-position: center;
-    background-size:  auto;
-    box-shadow: inset -0.35rem 0.35rem 0.75rem rgba(0, 0, 0, 0.3),
-    inset 0.5rem -0.25rem 0.5rem rgba(0, 0, 0, 0.15);
-    grid-column: 1;
-    grid-row: 1;
-    height: 100px;
-    width: 100px;
-    padding: 1rem;
 }
-.B-k-item {
+.dice[dice_type="k"][dice_color="black"] {
     background-image: url("dices/B_k.png");
-    background-position: center;
-    background-size: auto;
-    box-shadow: inset -0.35rem 0.35rem 0.75rem rgba(0, 0, 0, 0.3),
-    inset 0.5rem -0.25rem 0.5rem rgba(0, 0, 0, 0.15);
-    grid-column: 1;
-    grid-row: 1;
-    height: 100px;
-    width: 100px;
-    padding: 1rem;
 }
 
 .roll {
@@ -157,22 +99,22 @@ body {
     transform: rotateX(0) rotateY(270deg) rotateZ(0);
 }
 
-[dice-side="1"] {
+[dice_type="p"] {
     transform: rotate3d(0, 0, 0, 90deg) translateZ(4rem);
 }
-[dice-side="2"] {
+[dice_type="n"] {
     transform: rotate3d(-1, 0, 0, 90deg) translateZ(4rem);
 }
-[dice-side="3"] {
+[dice_type="b"] {
     transform: rotate3d(0, 1, 0, 90deg) translateZ(4rem);
 }
-[dice-side="4"] {
+[dice_type="r"] {
     transform: rotate3d(0, -1, 0, 90deg) translateZ(4rem);
 }
-[dice-side="5"] {
+[dice_type="q"] {
     transform: rotate3d(1, 0, 0, 90deg) translateZ(4rem);
 }
-[dice-side="6"] {
+[dice_type="k"] {
     transform: rotate3d(1, 0, 0, 180deg) translateZ(4rem);
 }
 
