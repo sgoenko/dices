@@ -64,6 +64,25 @@ body {
     background-image: url("dices/B_k.png");
 }
 
+.dice[dice_type="p"][dice_color="white"] {
+    background-image: url("dices/W_p.png");
+}
+.dice[dice_type="n"][dice_color="white"] {
+    background-image: url("dices/W_n.png");
+}
+.dice[dice_type="b"][dice_color="white"] {
+    background-image: url("dices/W_b.png");
+}
+.dice[dice_type="r"][dice_color="white"] {
+    background-image: url("dices/W_r.png");
+}
+.dice[dice_type="q"][dice_color="white"] {
+    background-image: url("dices/W_q.png");
+}
+.dice[dice_type="k"][dice_color="white"] {
+    background-image: url("dices/W_k.png");
+}
+
 .roll {
     transition: transform 0.75s ease;
 }
