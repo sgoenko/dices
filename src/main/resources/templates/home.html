@@ -7,28 +7,28 @@
 <body>
 <div class="dice-list">
     <figure class="die" id="die-1">
-        <div class="dice" dice_color="black" dice_type="p" init_type="p"></div>
-        <div class="dice" dice_color="black" dice_type="n" init_type="n"></div>
-        <div class="dice" dice_color="black" dice_type="b" init_type="b"></div>
-        <div class="dice" dice_color="black" dice_type="r" init_type="r"></div>
-        <div class="dice" dice_color="black" dice_type="q" init_type="q"></div>
-        <div class="dice" dice_color="black" dice_type="k" init_type="k"></div>
+        <div class="dice" dice_color="black" dice_type="p" init_type="p" grayed="n"></div>
+        <div class="dice" dice_color="black" dice_type="n" init_type="n" grayed="n"></div>
+        <div class="dice" dice_color="black" dice_type="b" init_type="b" grayed="n"></div>
+        <div class="dice" dice_color="black" dice_type="r" init_type="r" grayed="n"></div>
+        <div class="dice" dice_color="black" dice_type="q" init_type="q" grayed="n"></div>
+        <div class="dice" dice_color="black" dice_type="k" init_type="k" grayed="n"></div>
     </figure>
     <figure class="die" id="die-2">
-        <div class="dice" dice_color="black" dice_type="p" init_type="p"></div>
-        <div class="dice" dice_color="black" dice_type="n" init_type="n"></div>
-        <div class="dice" dice_color="black" dice_type="b" init_type="b"></div>
-        <div class="dice" dice_color="black" dice_type="r" init_type="r"></div>
-        <div class="dice" dice_color="black" dice_type="q" init_type="q"></div>
-        <div class="dice" dice_color="black" dice_type="k" init_type="k"></div>
+        <div class="dice" dice_color="black" dice_type="p" init_type="p" grayed="n"></div>
+        <div class="dice" dice_color="black" dice_type="n" init_type="n" grayed="n"></div>
+        <div class="dice" dice_color="black" dice_type="b" init_type="b" grayed="n"></div>
+        <div class="dice" dice_color="black" dice_type="r" init_type="r" grayed="n"></div>
+        <div class="dice" dice_color="black" dice_type="q" init_type="q" grayed="n"></div>
+        <div class="dice" dice_color="black" dice_type="k" init_type="k" grayed="n"></div>
     </figure>
     <figure class="die" id="die-3">
-        <div class="dice" dice_color="black" dice_type="p" init_type="p"></div>
-        <div class="dice" dice_color="black" dice_type="n" init_type="n"></div>
-        <div class="dice" dice_color="black" dice_type="b" init_type="b"></div>
-        <div class="dice" dice_color="black" dice_type="r" init_type="r"></div>
-        <div class="dice" dice_color="black" dice_type="q" init_type="q"></div>
-        <div class="dice" dice_color="black" dice_type="k" init_type="k"></div>
+        <div class="dice" dice_color="black" dice_type="p" init_type="p" grayed="n"></div>
+        <div class="dice" dice_color="black" dice_type="n" init_type="n" grayed="n"></div>
+        <div class="dice" dice_color="black" dice_type="b" init_type="b" grayed="n"></div>
+        <div class="dice" dice_color="black" dice_type="r" init_type="r" grayed="n"></div>
+        <div class="dice" dice_color="black" dice_type="q" init_type="q" grayed="n"></div>
+        <div class="dice" dice_color="black" dice_type="k" init_type="k" grayed="n"></div>
     </figure>
 </div>
 <button type="button" id="roll-button">Roll</button>
@@ -43,9 +43,12 @@
 
     function rollDices() {
         const dice = [...document.querySelectorAll(".die")];
+        var j = 0;
         dice.forEach((die) => {
             for (var i = 0; i < die.children.length; i++) {
                 die.children[i].setAttribute('dice_type', die.children[i].getAttribute('init_type'));
+                die.children[i].setAttribute('state', 'begin');
+                die.children[i].setAttribute('grayed', 'n');
             }
             const resultDice = getRandomNumber(0, 5);
             die.classList.toggle("roll");
@@ -53,15 +56,23 @@
             const direction = getRandomNumber(1, 3);
             die.setAttribute('direction', '' + direction)
 
-            // setTimeout(() => {
-            //     die.classList.toggle("roll");
-                // for (var i = 0; i < die.children.length; i++) {
-                //     console.log('1___', die.children[i]);
-                //     die.children[i].setAttribute('dice_type', figures[resultDice])
-                //     console.log('2___', die.children[i]);
-                // }
-            // }, 750);
+            setTimeout(graySlot, 750, j, die, resultDice);
+            j++;
         });
+    }
+
+    function graySlot (slot, die, resultDice) {
+        die.classList.toggle("roll");
+        for (var i = 0; i < die.children.length; i++) {
+            die.children[i].setAttribute('dice_type', figures[resultDice])
+            if (grayed[slot]) {
+                die.children[i].setAttribute('grayed', 'y');
+            } else {
+                die.children[i].setAttribute('grayed', 'n');
+            }
+            die.children[i].setAttribute('state', 'end');
+            console.log('____', die.children[i], slot, grayed[slot]);
+        }
     }
 
     function getRandomNumber(min, max) {

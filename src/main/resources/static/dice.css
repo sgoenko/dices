@@ -43,43 +43,82 @@ body {
     padding: 1rem;
 }
 
-.dice[dice_type="p"][dice_color="black"] {
+.dice[dice_type="p"][dice_color="black"][grayed='n'] {
     background-image: url("dices/B_p.png");
 }
-.dice[dice_type="n"][dice_color="black"] {
+.dice[dice_type="n"][dice_color="black"][grayed='n'] {
     background-image: url("dices/B_n.png");
 }
-.dice[dice_type="b"][dice_color="black"] {
+.dice[dice_type="b"][dice_color="black"][grayed='n'] {
     background-image: url("dices/B_b.png");
 }
-.dice[dice_type="r"][dice_color="black"] {
+.dice[dice_type="r"][dice_color="black"][grayed='n'] {
     background-image: url("dices/B_r.png");
 }
-.dice[dice_type="q"][dice_color="black"] {
+.dice[dice_type="q"][dice_color="black"][grayed='n'] {
     background-image: url("dices/B_q.png");
 }
-.dice[dice_type="k"][dice_color="black"] {
+.dice[dice_type="k"][dice_color="black"][grayed='n'] {
     background-image: url("dices/B_k.png");
 }
 
-.dice[dice_type="p"][dice_color="white"] {
+.dice[dice_type="p"][dice_color="white"][grayed='n'] {
     background-image: url("dices/W_p.png");
 }
-.dice[dice_type="n"][dice_color="white"] {
+.dice[dice_type="n"][dice_color="white"][grayed='n'] {
     background-image: url("dices/W_n.png");
 }
-.dice[dice_type="b"][dice_color="white"] {
+.dice[dice_type="b"][dice_color="white"][grayed='n'] {
     background-image: url("dices/W_b.png");
 }
-.dice[dice_type="r"][dice_color="white"] {
+.dice[dice_type="r"][dice_color="white"][grayed='n'] {
     background-image: url("dices/W_r.png");
 }
-.dice[dice_type="q"][dice_color="white"] {
+.dice[dice_type="q"][dice_color="white"][grayed='n'] {
     background-image: url("dices/W_q.png");
 }
-.dice[dice_type="k"][dice_color="white"] {
+.dice[dice_type="k"][dice_color="white"][grayed='n'] {
     background-image: url("dices/W_k.png");
 }
+
+.dice[dice_type="p"][dice_color="black"][grayed='y'] {
+    background-image: url("dices/B_p_grayed.png");
+}
+.dice[dice_type="n"][dice_color="black"][grayed='y'] {
+    background-image: url("dices/B_n_grayed.png");
+}
+.dice[dice_type="b"][dice_color="black"][grayed='y'] {
+    background-image: url("dices/B_b_grayed.png");
+}
+.dice[dice_type="r"][dice_color="black"][grayed='y'] {
+    background-image: url("dices/B_r_grayed.png");
+}
+.dice[dice_type="q"][dice_color="black"][grayed='y'] {
+    background-image: url("dices/B_q_grayed.png");
+}
+.dice[dice_type="k"][dice_color="black"][grayed='y'] {
+    background-image: url("dices/B_k_grayed.png");
+}
+
+.dice[dice_type="p"][dice_color="white"][grayed='y'] {
+    background-image: url("dices/W_p_grayed.png");
+}
+.dice[dice_type="n"][dice_color="white"][grayed='y'] {
+    background-image: url("dices/W_n_grayed.png");
+}
+.dice[dice_type="b"][dice_color="white"][grayed='y'] {
+    background-image: url("dices/W_b_grayed.png");
+}
+.dice[dice_type="r"][dice_color="white"][grayed='y'] {
+    background-image: url("dices/W_r_grayed.png");
+}
+.dice[dice_type="q"][dice_color="white"][grayed='y'] {
+    background-image: url("dices/W_q_grayed.png");
+}
+.dice[dice_type="k"][dice_color="white"][grayed='y'] {
+    background-image: url("dices/W_k_grayed.png");
+}
+
 
 .roll {
     transition: transform 0.75s ease;
@@ -162,22 +201,22 @@ body {
     transform: rotateZ(180deg) rotateY(180deg);
 }
 
-[dice_type="p"] {
+[dice_type="p"][state='begin'] {
     transform: rotate3d(0, 0, 0, 90deg) translateZ(4rem);
 }
-[dice_type="n"] {
+[dice_type="n"][state='begin'] {
     transform: rotate3d(-1, 0, 0, 90deg) translateZ(4rem);
 }
-[dice_type="b"] {
+[dice_type="b"][state='begin'] {
     transform: rotate3d(0, 1, 0, 90deg) translateZ(4rem);
 }
-[dice_type="r"] {
+[dice_type="r"][state='begin'] {
     transform: rotate3d(0, -1, 0, 90deg) translateZ(4rem);
 }
-[dice_type="q"] {
+[dice_type="q"][state='begin'] {
     transform: rotate3d(1, 0, 0, 90deg) translateZ(4rem);
 }
-[dice_type="k"] {
+[dice_type="k"][state='begin'] {
     transform: rotate3d(1, 0, 0, 180deg) translateZ(4rem);
 }
 
