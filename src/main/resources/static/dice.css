@@ -90,7 +90,8 @@ body {
     transform: rotateX(360deg);
 }
 .roll[result_dice="p"][direction="2"] {
-    transform: rotateY(360deg);
+    transform-origin: 65% 50%;
+    transform: rotateX(90deg) rotateY(180deg) rotateZ(180deg) rotateX(90deg);
 }
 .roll[result_dice="p"][direction="3"] {
     transform: rotateY(-360deg);
@@ -122,14 +123,41 @@ body {
     transform: rotateX(360deg) rotateY(270deg);
 }
 
-.roll[result_dice="r"] {
+.roll[result_dice="r"][direction="1"] {
+    transform-origin: 65% 50%;
     transform: rotateY(90deg);
 }
-.roll[result_dice="q"] {
+.roll[result_dice="r"][direction="2"] {
+    transform-origin: 65% 50%;
+    transform: rotateY(-270deg);
+}
+.roll[result_dice="r"][direction="3"] {
+    transform-origin: 65% 50%;
+    transform: rotateX(90deg) rotateY(180deg) rotateZ(180deg) rotateX(90deg) rotateY(90deg);
+}
+
+.roll[result_dice="q"][direction="1"] {
     transform: rotateY(180deg) rotateZ(180deg);
 }
-.roll[result_dice="k"] {
+.roll[result_dice="q"][direction="2"] {
+    transform-origin: 65% 50%;
+    transform: rotateZ(90deg) rotateY(90deg) rotateZ(-90deg);
+}
+.roll[result_dice="q"][direction="3"] {
+    transform-origin: 65% 50%;
+    transform: rotateX(90deg) rotateY(180deg) rotateZ(180deg);
+}
+
+.roll[result_dice="k"][direction="1"] {
     transform: rotateY(270deg);
+}
+.roll[result_dice="k"][direction="2"] {
+    transform-origin: 65% 50%;
+    transform: rotateZ(90deg) rotateY(180deg) rotateZ(-90deg);
+}
+.roll[result_dice="k"][direction="3"] {
+    transform-origin: 65% 50%;
+    transform: rotateZ(180deg) rotateY(180deg);
 }
 
 [dice_type="p"] {
