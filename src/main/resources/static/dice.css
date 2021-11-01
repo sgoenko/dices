@@ -86,34 +86,50 @@ body {
 }
 
 .roll[result_dice="p"][direction="1"] {
-    transform: rotateX(360deg) rotateY(0) rotateZ(0);
+    transform-origin: 50% 45%;
+    transform: rotateX(360deg);
 }
 .roll[result_dice="p"][direction="2"] {
-    transform: rotateX(0) rotateY(360deg) rotateZ(0);
+    transform: rotateY(360deg);
 }
 .roll[result_dice="p"][direction="3"] {
-    transform: rotateX(0) rotateY(-360deg) rotateZ(0);
+    transform: rotateY(-360deg);
 }
+
 .roll[result_dice="n"][direction="1"] {
-    transform: rotateX(90deg) rotateY(0) rotateZ(0);
+    transform-origin: 50% 60%;
+    transform: rotateX(90deg);
 }
 .roll[result_dice="n"][direction="2"] {
-    transform: rotateX(-270deg) rotateY(0) rotateZ(0);
+    transform-origin: 50% 45%;
+    transform: rotateX(-270deg);
 }
 .roll[result_dice="n"][direction="3"] {
+    transform-origin: 50% 45%;
     transform: rotateX(180deg) rotateY(180deg) rotateX(-90deg) rotateZ(180deg);
 }
-.roll[result_dice="b"] {
-    transform: rotateX(0) rotateY(-90deg) rotateZ(0);
+
+.roll[result_dice="b"][direction="1"] {
+    transform-origin: 65% 50%;
+    transform: rotateY(-90deg);
 }
+.roll[result_dice="b"][direction="2"] {
+    transform-origin: 65% 50%;
+    transform: rotateY(270deg);
+}
+.roll[result_dice="b"][direction="3"] {
+    transform-origin: 65% 50%;
+    transform: rotateX(360deg) rotateY(270deg);
+}
+
 .roll[result_dice="r"] {
-    transform: rotateX(0) rotateY(90deg) rotateZ(0);
+    transform: rotateY(90deg);
 }
 .roll[result_dice="q"] {
-    transform: rotateX(0) rotateY(180deg) rotateZ(180deg);
+    transform: rotateY(180deg) rotateZ(180deg);
 }
 .roll[result_dice="k"] {
-    transform: rotateX(0) rotateY(270deg) rotateZ(0);
+    transform: rotateY(270deg);
 }
 
 [dice_type="p"] {
